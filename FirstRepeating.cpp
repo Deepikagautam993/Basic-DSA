@@ -1,8 +1,10 @@
 #include <iostream>
-#include<vector>
+#include <vector>
 using namespace std;
 
-int firstRepeating(vector<int>& arr, int n) {
+int firstRepeating(vector<int>& arr) {
+
+    int n = arr.size();
 
     for(int i = 0; i < n; i++) {
 
@@ -11,23 +13,18 @@ int firstRepeating(vector<int>& arr, int n) {
             if(arr[i] == arr[j]) {
                 return arr[i];
             }
+
         }
+
     }
 
-    return -1; // No repeating element
+    return -1;
 }
 
 int main() {
 
     vector<int> arr = {10, 5, 3, 4, 3, 5, 6};
-    int n = 7;
 
-    int result = firstRepeating(arr, n);
+    cout << firstRepeating(arr);
 
-    if(result != -1)
-        cout << "First repeating element: " << result;
-    else
-        cout << "No repeating element";
-
-    return 0;
 }
